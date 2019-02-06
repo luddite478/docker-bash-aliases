@@ -1,0 +1,22 @@
+d() {
+  case $1 in
+    c)
+      docker container "${@:2}" 
+    ;;
+    i)
+      docker image "${@:2}" 
+    ;;
+    r)
+      docker run "${@:2}" 
+    ;;
+    b)
+      docker build "${@:2}" 
+    ;;
+    e)
+      docker exec "${@:2}" 
+    ;;
+    *)
+      command docker "$@"
+    ;;
+  esac
+}
