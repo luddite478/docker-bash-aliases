@@ -1,4 +1,6 @@
-Append this to the end of ~/.bashrc
+Append aliases.txt to the end of ~/.bashrc
+
+Usage: 
 
 d - docker \
 d r - docker run \
