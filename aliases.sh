@@ -22,8 +22,8 @@ d() {
       case $third_arg in
         c)
           #remove unused containers
-          unused_container=$(docker container ps -a -q)
-          if [[ $unused_containers -eq "" ]]; then
+          unused_containers=$(docker container ps -a -q)
+          if [[ $unused_containers == "" ]]; then
             echo "No unused containers"
           else
             docker rm $unused_containers
@@ -33,7 +33,7 @@ d() {
         i)
           #remove <none> images
           none_images=$(docker images --filter dangling=true -q --no-trunc)
-          if [[ $none_images -eq "" ]]; then
+          if [[ $none_images == "" ]]; then
             echo "No <none> images"
           else
             docker rmi $none_images
