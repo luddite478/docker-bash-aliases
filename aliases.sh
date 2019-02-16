@@ -41,7 +41,7 @@ d() {
         ;;
  
         *)
-          echo 'Usage: d del c|i'
+          echo 'Usage: d clr c|i'
         esac
 
     ;;
