@@ -1,4 +1,4 @@
-Append aliases.txt to the end of ~/.bashrc
+Append aliases.sh to the end of ~/.bashrc
 
 Usage: 
 
