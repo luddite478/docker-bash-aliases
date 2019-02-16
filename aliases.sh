@@ -16,7 +16,7 @@ d() {
       docker exec "${@:2}" 
     ;;
 
-    del)
+    clr)
 
       third_arg=${@:(2):1}
       case $third_arg in
