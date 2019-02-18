@@ -11,8 +11,8 @@ d b - docker build \
 d i - docker image \
 d c - docker container \
 d clr i - remove \<none\> images \
-d clr c - remove unused containers  \
+d clr c - remove unused containers  
 
 *docker-compose*
 
-dc u - docker-compose up \ 
+dc u - docker-compose up 
