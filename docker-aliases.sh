@@ -15,7 +15,9 @@ d() {
     e)
       docker exec "${@:2}" 
     ;;
-
+    p)
+      docker system prune
+    ;;
     clr)
 
       third_arg=${@:(2):1}
