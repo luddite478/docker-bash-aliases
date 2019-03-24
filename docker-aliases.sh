@@ -22,8 +22,9 @@ d() {
           docker network prune
         ;;
         *)
-          docker network 
+          docker network "${@:2}" 
         ;;
+      esac
     ;;
     p)
       docker system prune
