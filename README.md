@@ -10,6 +10,8 @@ d e - docker exec \
 d b - docker build \
 d i - docker image \
 d c - docker container \
+d n - docker network \
+d n p - docker network prune \
 d p - docker system prune \
 d clr i - remove \<none\> images \
 d clr c - remove unused containers  
