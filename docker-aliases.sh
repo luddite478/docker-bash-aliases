@@ -15,6 +15,16 @@ d() {
     e)
       docker exec "${@:2}" 
     ;;
+    n)
+      third_arg=${@:(2):1}
+      case $third_arg in
+        p)
+          docker network prune
+        ;;
+        *)
+          docker network 
+        ;;
+    ;;
     p)
       docker system prune
     ;;
