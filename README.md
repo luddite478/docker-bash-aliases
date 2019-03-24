@@ -16,4 +16,5 @@ d clr c - remove unused containers
 
 *docker-compose*
 
-dc u - docker-compose up 
+dc u - docker-compose up
+dc d - docker-compose down
