@@ -32,11 +32,24 @@ d() {
     s)
       third_arg=${@:(2):1}
       case $third_arg in
-        rm)
+        a)
           running_containers=$(docker ps -q)
-          docker stop $running_containers > /dev/null
-          docker rm $running_containers > /dev/null
-          echo stopped and removed $running_containers
+          if [[ $running_containers == "" ]]; then 
+            echo "no running containers"
+          else
+            fourth_arg=${@:(3):1}
+            case $fourth_arg in
+              rm)
+                docker stop $running_containers > /dev/null
+                docker rm $running_containers > /dev/null
+                echo stopped and removed $running_containers
+              ;;
+              *)
+                docker stop $running_containers > /dev/null
+                echo stopped $running_containers
+              ;;
+            esac
+          fi
         ;;
         *)
           docker stop "${@:2}"
