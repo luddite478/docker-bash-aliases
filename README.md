@@ -13,8 +13,9 @@ d c - docker container \
 d n - docker network \
 d n p - docker network prune \
 d p - docker system prune \
-d clr i - remove \<none\> images \
-d clr c - remove unused containers  
+d s - docker stop \
+d s a - stop all running containers \
+d s a rm - stop all running containers and remove them 
 
 *docker-compose*
 
