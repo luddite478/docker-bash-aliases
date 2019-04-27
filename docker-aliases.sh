@@ -29,36 +29,20 @@ d() {
     p)
       docker system prune
     ;;
-    clr)
-
+    s)
       third_arg=${@:(2):1}
       case $third_arg in
-        c)
-          #remove unused containers
-          unused_containers=$(docker container ps -a -q)
-          if [[ $unused_containers == "" ]]; then
-            echo "No unused containers"
-          else
-            docker rm $unused_containers
-          fi
+        rm)
+          running_containers=$(docker ps -q)
+          docker stop $running_containers > /dev/null
+          docker rm $running_containers > /dev/null
+          echo stopped and removed $running_containers
         ;;
-
-        i)
-          #remove <none> images
-          none_images=$(docker images --filter dangling=true -q --no-trunc)
-          if [[ $none_images == "" ]]; then
-            echo "No <none> images"
-          else
-            docker rmi $none_images
-          fi
-        ;;
- 
         *)
-          echo 'Usage: d clr c|i'
-        esac
-
+          docker stop "${@:2}"
+        ;;
+      esac
     ;;
-
     *)
       command docker "$@" 
     ;;
